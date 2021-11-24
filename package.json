@@ -1,0 +1,33 @@
+{
+  "name": "ruleta",
+  "version": "1.0.0",
+  "description": "Ruleta",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/andreybejarano/ruleta.git"
+  },
+  "keywords": [
+    "Ruleta",
+    "Node.js",
+    "Express"
+  ],
+  "author": "Andrey Bejarano <andreybejarano@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreybejarano/ruleta/issues"
+  },
+  "homepage": "https://github.com/andreybejarano/ruleta#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15"
+  }
+}
