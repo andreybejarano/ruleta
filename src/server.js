@@ -31,22 +31,22 @@ api.use(`${basePath}api`, require('./routes/api'));
 
 // Not found error middleware
 api.use((req, res, next) => {
-    res.status(404).send({
-        status: 404,
-        error: 'Resource not found'
-    });
+  res.status(404).send({
+    status: 404,
+    error: 'Resource not found'
+  });
 });
 
 // Error middleware
 api.use((err, req, res, next) => {
-    let status = err.status || 500;
-    if (err.response) {
-        err.message = `${err.message} ${err.response.data.message}`;
-        status = err.response.status;
-    }
-    return res.status(status).json({ status, error: err.message });
+  let status = err.status || 500;
+  if (err.response) {
+    err.message = `${err.message} ${err.response.data.message}`;
+    status = err.response.status;
+  }
+  return res.status(status).json({ status, error: err.message });
 });
 
 api.listen(process.env.PORT, () => {
-    console.log(`${pkg.name} on http://localhost:${process.env.PORT}${basePath}  (${process.env.NODE_ENV})`);
+  console.log(`${pkg.name} on http://localhost:${process.env.PORT}${basePath}  (${process.env.NODE_ENV})`);
 });
