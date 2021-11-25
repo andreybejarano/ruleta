@@ -6,7 +6,7 @@ const cors = require('cors');
 const pkg = require('../package.json');
 
 const api = express();
-const basePath = '/api';
+const basePath = '/';
 
 api.use(cors());
 
@@ -22,8 +22,12 @@ api.disable('x-powered-by');
 api.use(express.json());
 api.use(express.urlencoded({ extended: true }));
 
-// include routes and expose in base path
-api.use(basePath, require('./routes'));
+
+// include APP routes and expose in base path
+api.use(basePath, require('./routes/app'));
+
+// include API routes and expose in base path
+api.use(`${basePath}api`, require('./routes/api'));
 
 // Not found error middleware
 api.use((req, res, next) => {
