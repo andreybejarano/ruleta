@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+const path = require('path');
 
 const pkg = require('../package.json');
 
@@ -21,6 +22,8 @@ api.disable('x-powered-by');
 // Parse body params and attach them to req.body
 api.use(express.json());
 api.use(express.urlencoded({ extended: true }));
+
+api.use(express.static(path.resolve(__dirname, 'public')));
 
 
 // include APP routes and expose in base path

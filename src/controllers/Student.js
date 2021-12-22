@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-async function run(req, res, next) {
+async function selectRandomStudent(req, res, next) {
   try {
     const availableStudentsFile = fs.readFileSync(path.resolve('./available_students.json'));
     const SeletedStudentsFile = fs.readFileSync(path.resolve('./selected_students.json'));
@@ -31,13 +31,13 @@ async function run(req, res, next) {
   }
 }
 
-async function studentsSeleted(req, res) {
+async function getAllSeletedStudents(req, res) {
   const SeletedStudentsFile = fs.readFileSync(path.resolve('./selected_students.json'));
-  const studentsSelectedData = JSON.parse(SeletedStudentsFile);
-  return res.json(studentsSelectedData);
+  const SelectedStudentsData = JSON.parse(SeletedStudentsFile);
+  return res.json(SelectedStudentsData);
 }
 
 module.exports = {
-  run,
-  studentsSeleted
+  selectRandomStudent,
+  getAllSeletedStudents
 }

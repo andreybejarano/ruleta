@@ -5,11 +5,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
   <title>Rolette</title>
 </head>
 
 <body>
-  <h1>Welcome</h1>
+
+  <button onclick="getUserRandom()">Correr ruleta</button>
+  <button onclick="getUserSelected()">Traer usuarios seleccionados</button>
+  <div id="container-user-selected">
+    <h1>Es turno de: <span id="user-selected"></span></h1>
+  </div>
+  <div id="container-users-selected">
+    <h1>Usuarios seleccionados</h1>
+    <ul></ul>
+  </div>
+  <script src="/js/request.js"></script>
+  <script src="/js/client.js"></script>
 </body>
 
 </html>
